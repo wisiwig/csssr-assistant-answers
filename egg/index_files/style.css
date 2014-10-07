@@ -1,0 +1,37 @@
+body {
+background:transparent;
+min-height:1800px;
+}
+
+#image{
+height:100%;
+width:100%;
+position:absolute;
+left:8px;
+top:8px;
+}
+
+#link {
+z-index:9;
+width: 1270px;
+height: 1800px;
+display: block;
+}
+
+#layer {
+position:fixed;
+top:1px;
+left:12px;
+z-index:999;
+background:transparent;
+}
+
+#opamount {
+max-width:23px;
+position:relative;
+left:-4px;
+background:transparent;
+border:0; 
+color:#f6931f; 
+font-weight:bold;
+}

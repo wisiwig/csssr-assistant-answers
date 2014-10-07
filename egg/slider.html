@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head lang="rus">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<title>Quest VS layout :: slider</title>
+
+<link rel="stylesheet" href="index_files/jquery-ui.css">
+<link rel="stylesheet" href="index_files/style.css">
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="index_files/jquery-ui.js"></script>
+
+</head>
+
+<body>
+<div id="layer">
+	<p>
+		<input type="text" id="opamount" readonly>
+	</p>
+	<div id="opac" class="ui-slider ui-slider-vertical ui-widget ui-widget-content ui-corner-all" style="height:200px;">
+	</div>
+</div>
+
+<div id="image">
+	<img id="swatch" src="index_files/quest-0.png" width="1400" height="1940" alt="">
+	</img>
+</div>
+
+<div id="link">
+	<iframe src="http://csssr.github.io/assistant-manager-quest/" name="livePreviewFrame" width="1270px" height="1940px" frameborder="0" style=" min-height: 100%; top:-15px;" ALLOWTRANSPARENCY="true"> 
+	</iframe>
+</div>
+
+<script> 
+	function refreshOpacity() {
+		var	transparency = $( "#opac" ).slider( "value" );
+		var	my_op = (transparency/100); 
+		$( "#swatch" ).css( "opacity", my_op );
+		$( "#opac_val" ).val(opac );
+	}
+
+$( "#opac" ).slider({
+	orientation: "vertical",
+	range: "min",
+	min: 0,
+	max: 100,
+	value: 100,
+	slide: refreshOpacity,
+	start: refreshOpacity,
+	change: function( event, ui ) {
+		$( "#opamount" ).val( ui.value );
+}
+});
+		$( "#opamount" ).val( $( "#opac" ).slider( "value" ) );					
+		$( "#opac" ).slider( "value", 100 );
+</script> 
+
+</body>
+</html>
